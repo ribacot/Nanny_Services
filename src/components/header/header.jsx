@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Navigation from "../Navigation/navigation";
-import { Link } from "react-router-dom";
-import MobileMenu from "../MobileMenu/mobileMenu";
+import Navigation from "./Navigation/navigation";
+import { Link, useLocation } from "react-router-dom";
+import MobileMenu from "./MobileMenu/mobileMenu";
 import { Container } from "../ui/container/container";
 // import { Bars3Icon, XMarkIcon } from '@heroicons/react@heroicons/react/24/outline'
 
@@ -14,8 +14,13 @@ const navigationLinks = [
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+	const location = useLocation();
+	const pathPage = location.pathname;
+
 	return (
-		<header className="py-[20px] ">
+		<header
+			className={`${pathPage === "/" ? " fixed w-full pt-[52px] pb-[20px] border-solid border-[1px] border-rgba(251, 251, 251, 0.4)" : "py-[20px]"} text-white`}
+		>
 			<Container>
 				<nav className="flex items-center gap-[305px]" aria-label="Global">
 					<div className="flex lg:flex-1">
@@ -36,7 +41,7 @@ export default function Header() {
 					<Navigation
 						links={navigationLinks}
 						onClick={() => setMobileMenuOpen(false)}
-						className="hidden md:flex md:gap-[40px]"
+						className=""
 					/>
 				</nav>
 			</Container>

@@ -9,13 +9,15 @@ module.exports = {
 		extend: {},
 	},
   theme: {
-    // extend: {
-    //   backgroundImage: {
-    //     "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-    //     "gradient-conic":
-    //       "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-    //   },
-    // },
+    extend: {
+      colors: {
+				blue: "#0957C3",
+				// darkBlue: "#0B44CD",
+				// input: "#F7F7FB",
+        // darck:" #121417"
+			},
+
+    },
     screens: {
 			sm: '320px',
 			md: '768px',
