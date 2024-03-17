@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Navigation from "./Navigation/navigation";
-import { Link, useLocation } from "react-router-dom";
+import Navigation from "./Navigation/Navigation";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import MobileMenu from "./MobileMenu/mobileMenu";
 import { Container } from "../ui/container/container";
 // import { Bars3Icon, XMarkIcon } from '@heroicons/react@heroicons/react/24/outline'
@@ -11,6 +11,8 @@ const navigationLinks = [
 	{ name: "Favorites", href: "/favorites" },
 ];
 
+const isAthorized=false
+
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,15 +21,16 @@ export default function Header() {
 
 	return (
 		<header
-			className={`${pathPage === "/" ? " fixed w-full pt-[52px] pb-[20px] border-solid border-[1px] border-rgba(251, 251, 251, 0.4)" : "py-[20px]"} text-white`}
+			className={`${pathPage === "/" ? " absolute w-full pt-[52px] pb-[20px] border-solid border-[1px] border-rgba(251, 251, 251, 0.4)" : "py-[20px]  bg-blue"} text-white`}
 		>
 			<Container>
-				<nav className="flex items-center gap-[305px]" aria-label="Global">
+				<nav className={`flex items-center ${isAthorized?"gap-[305px]":"gap-[487px]"}`} aria-label="Global">
+
 					<div className="flex lg:flex-1">
-						<Link href="/" className="-m-1.5 p-1.5">
+						<NavLink to="/" className="logo">
 							<span className="sr-only">Your Company</span>
 							Nanny.Services
-						</Link>
+						</NavLink>
 					</div>
 					<div className="flex md:hidden">
 						<button
@@ -39,6 +42,7 @@ export default function Header() {
 						</button>
 					</div>
 					<Navigation
+					isAthorized={isAthorized}
 						links={navigationLinks}
 						onClick={() => setMobileMenuOpen(false)}
 						className=""

@@ -9,13 +9,18 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@rsbuild/core": "^0.4.15",
+    "@rsbuild/plugin-babel": "^0.4.15",
+    "@rsbuild/plugin-eslint": "^0.4.15",
+    "@rsbuild/plugin-image-compress": "^0.4.15",
     "@rsbuild/plugin-react": "^0.4.15",
+    "@rsbuild/plugin-stylus": "^0.4.15",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"

@@ -1,6 +1,6 @@
 import { Dialog } from "@headlessui/react";
 import { Container } from "../../ui/container/container";
-import Navigation from "../Navigation/navigation";
+import Navigation from "../Navigation/Navigation";
 
 export default function MobileMenu({onClick, isOpen, links}) {
 	return (

@@ -1,19 +1,23 @@
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import AuthNav from "../../AuthNav/AuthNav";
+import "./Navigation.css";
 
-export default function Navigation({ links, className, onClick = null }) {
+export default function Navigation({ links, className, onClick = null, isAthorized }) {
+	const location=useLocation()
 	return (
-		<div className="justify-between hidden xl:flex w-full ">
+		<div className="linkNav justify-between hidden xl:flex w-full  ">
 			<ul className={`${className} flex gap-[40px] items-center`}>
 				{links.map(({ name, href }) => (
 					<li key={name}>
-						<Link
-							href={href}
+						<NavLink
+							to={href} state={{ from: location }}
 							onClick={() => onClick(false)}
-							className="flex text-sm font-semibold  "
+							className={`${
+								!isAthorized & (href === "/favorites") ? "hidden" : " "
+							} `}
 						>
 							{name}
-						</Link>
+						</NavLink>
 					</li>
 				))}
 			</ul>
