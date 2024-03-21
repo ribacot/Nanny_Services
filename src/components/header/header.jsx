@@ -39,7 +39,7 @@ export default function Header() {
 					>
 						<div className="flex lg:flex-1">
 							<NavLink to="/" className="logo">
-								<span className="sr-only">Your Company</span>
+								<span className="sr-only">Nanny.Services</span>
 								Nanny.Services
 							</NavLink>
 						</div>
@@ -50,7 +50,7 @@ export default function Header() {
 							className="hidden xl:flex w-full justify-between"
 							className1="flex gap-[40px] items-center"
 						/>
-						<button
+						<div>						<button
 							type="button"
 							className="flex items-center justify-center rounded-md  text-white xl:hidden"
 							onClick={() => setMobileMenuOpen(true)}
@@ -60,6 +60,7 @@ export default function Header() {
 							) : null}
 						</button>
 						<span className="sr-only">Open main menu</span>
+</div>
 					</nav>
 
 				<MobileMenu
