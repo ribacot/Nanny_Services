@@ -30,14 +30,25 @@
 	.heroBg {
     background-image: url("../public/img/heroBg.jpg");
     background-size: cover;
+	min-height: 100svh;
+	background-position: center;
 	}
 }
+@layer components{
+	.btn{
+		@apply  px-[40px] py-[14px] border-solid rounded-[30px] border-[1px]  border-borderColor 
+	}
+	.btn:hover{
+        @apply bg-hoverColor
+    }
+	
+}
 
-h1 {
-	color: white;
+/* h1 {
 	font-size: 70px;
 	font-weight: 500;
 	line-height: 70px;
 	letter-spacing: -0.03em;
 	text-align: left;
-}
+} */
+

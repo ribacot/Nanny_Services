@@ -1,9 +1,11 @@
 import { useState } from "react";
-import Navigation from "./Navigation/Navigation";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import MobileMenu from "./MobileMenu/mobileMenu";
+import { NavLink, useLocation } from "react-router-dom";
+import MobileMenu from "./MobileMenu/MobileMenu";
 import { Container } from "../ui/container/container";
-// import { Bars3Icon, XMarkIcon } from '@heroicons/react@heroicons/react/24/outline'
+import { createPortal } from "react-dom";
+import Modal from "../../Modal/Modal";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Navigation from "./Navigation/Navigation";
 
 const navigationLinks = [
 	{ name: "Home", href: "/" },
@@ -11,50 +13,61 @@ const navigationLinks = [
 	{ name: "Favorites", href: "/favorites" },
 ];
 
-const isAthorized=false
+const isAthorized = false;
+const modalRoot = document.querySelector("#modal");
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+	const [isModal, setIsModal] = useState(false);
 	const location = useLocation();
 	const pathPage = location.pathname;
 
 	return (
-		<header
-			className={`${pathPage === "/" ? " absolute w-full pt-[52px] pb-[20px] border-solid border-[1px] border-rgba(251, 251, 251, 0.4)" : "py-[20px]  bg-blue"} text-white`}
-		>
-			<Container>
-				<nav className={`flex items-center ${isAthorized?"gap-[305px]":"gap-[487px]"}`} aria-label="Global">
-
-					<div className="flex lg:flex-1">
-						<NavLink to="/" className="logo">
-							<span className="sr-only">Your Company</span>
-							Nanny.Services
-						</NavLink>
-					</div>
-					<div className="flex md:hidden">
+		<>
+			<header
+				className={`${
+					pathPage === "/"
+						? " absolute w-full xl:pt-[52px] py-[20px] border-solid border-b-[1px] border-borderColor"
+						: "py-[20px]  bg-blue"
+				} text-white px-[15px] md:px-[100px] xl:px-[128px]`}
+			>
+					<nav
+						className={`flex items-center justify-between mdOnly:justify-between ${
+							isAthorized ? "xl:gap-[305px]" : "xl:gap-[487px]"
+						}`}
+						aria-label="Global"
+					>
+						<div className="flex lg:flex-1">
+							<NavLink to="/" className="logo">
+								<span className="sr-only">Your Company</span>
+								Nanny.Services
+							</NavLink>
+						</div>
+						<Navigation
+							isAthorized={isAthorized}
+							links={navigationLinks}
+							onClick={() => setMobileMenuOpen(false)}
+							className="hidden xl:flex w-full justify-between"
+							className1="flex gap-[40px] items-center"
+						/>
 						<button
 							type="button"
-							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+							className="flex items-center justify-center rounded-md  text-white xl:hidden"
 							onClick={() => setMobileMenuOpen(true)}
 						>
-							<span className="sr-only">Open main menu</span>X
+							{!mobileMenuOpen ? (
+								<Bars3Icon className=" fill-white w-[32px] h-[32px]" />
+							) : null}
 						</button>
-					</div>
-					<Navigation
-					isAthorized={isAthorized}
-						links={navigationLinks}
-						onClick={() => setMobileMenuOpen(false)}
-						className=""
-					/>
-				</nav>
-			</Container>
+						<span className="sr-only">Open main menu</span>
+					</nav>
 
-			<MobileMenu
-				onClick={setMobileMenuOpen}
-				isOpen={mobileMenuOpen}
-				links={navigationLinks}
-			/>
-		</header>
+				<MobileMenu
+					onClick={setMobileMenuOpen}
+					isOpen={mobileMenuOpen}
+					links={navigationLinks}
+				/>
+			</header>
+		</>
 	);
 }
