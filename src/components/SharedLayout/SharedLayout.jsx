@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router";
-import Header from "../Header/Header";
+import Heade from "../header/header";
 export default function SharedLayout() {
 	return (
 		<>
-		<Header/>
+		<Heade/>
 		<main>
 				<Suspense fallback={<h1>Load...</h1>}>{<Outlet />}</Suspense>
 			</main>
