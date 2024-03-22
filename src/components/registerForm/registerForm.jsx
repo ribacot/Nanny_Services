@@ -1,4 +1,4 @@
-export default function registerForm() {
+export default function RegisterForm() {
 
     return <form action=""></form>
 }

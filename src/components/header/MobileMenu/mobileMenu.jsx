@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
-import Navigation from "../Navigation/Navigation";
 import { NavLink } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import Navigation from "../Navigation/Navigation";
 export default function MobileMenu({ onClick, isOpen, links }) {
 	return (
 		<Dialog as="div" className="lg:hidden " open={isOpen} onClose={onClick}>

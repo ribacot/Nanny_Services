@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import MobileMenu from "./MobileMenu/MobileMenu";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Navigation from "./Navigation/Navigation";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
 const navigationLinks = [
 	{ name: "Home", href: "/" },
@@ -46,7 +46,6 @@ export default function Heade() {
 						className1="flex gap-[40px] items-center"
 					/>
 					<div>
-						{" "}
 						<button
 							type="button"
 							className="flex items-center justify-center rounded-md  text-white xl:hidden"
