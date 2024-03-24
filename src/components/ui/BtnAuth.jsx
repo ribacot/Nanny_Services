@@ -1,4 +1,4 @@
-export default function BtnAuth({ children, onClick }) {
+export function BtnAuth({ children, onClick }) {
 	return (
 		<button
 			type="button"

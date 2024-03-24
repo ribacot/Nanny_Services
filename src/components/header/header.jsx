@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import Navigation from "./Navigation/Navigation";
-import MobileMenu from "./MobileMenu/MobileMenu";
+import { Navigation } from "./Navigation/Navigation";
+import { MobileMenu } from "./MobileMenu/MobileMenu";
 
 const navigationLinks = [
 	{ name: "Home", href: "/" },
@@ -12,7 +12,7 @@ const navigationLinks = [
 
 const isAthorized = false;
 
-export default function Heade() {
+export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const location = useLocation();
 	const pathPage = location.pathname;

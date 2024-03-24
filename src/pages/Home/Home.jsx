@@ -3,7 +3,7 @@ import { Container } from "../../components/ui/container/container";
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid";
 import style from "./Home.module.css";
 
-export default function Home() {
+export function Home() {
 	return (
 		<section className=" xl:h-[800px] xl:p-[32px]">
 			<div className="flex h-full w-full xl:rounded-[30px] xl:overflow-hidden">

@@ -1,3 +1,3 @@
-export default function Nannies() {
+export  function Nannies() {
     return <h1>Nannies</h1>
 }

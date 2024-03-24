@@ -1,6 +1,6 @@
 import "../form/form.css";
 
-export default function Input({
+export function Input({
 	register,
 	id = "",
 	placeholder = "",

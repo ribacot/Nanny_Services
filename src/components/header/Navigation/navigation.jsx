@@ -1,8 +1,14 @@
 import { NavLink, useLocation } from "react-router-dom";
-import AuthNav from "../../AuthNav/AuthNav";
+import {AuthNav} from "../../AuthNav/AuthNav";
 import "./Navigation.css";
 
-export default function Navigation({ links, className,className1="", onClick = null, isAthorized }) {
+export function Navigation({
+	links,
+	className,
+	className1 = "",
+	onClick = null,
+	isAthorized,
+}) {
 	const location = useLocation();
 	return (
 		<div className={`${className}`}>
