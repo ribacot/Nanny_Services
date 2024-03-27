@@ -12,7 +12,7 @@ const navigationLinks = [
 
 const isAthorized = false;
 
-export function Header() {
+export const Header=()=>{
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const location = useLocation();
 	const pathPage = location.pathname;
