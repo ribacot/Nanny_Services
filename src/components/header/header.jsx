@@ -10,7 +10,7 @@ const navigationLinks = [
 	{ name: "Favorites", href: "/favorites" },
 ];
 
-const isAthorized = false;
+const isAthorized = true;
 
 export const Header=()=>{
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
