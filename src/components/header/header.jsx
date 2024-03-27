@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { Navigation } from "./Navigation/Navigation";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
+import { Navigation } from "./navigation/navigation";
 
 const navigationLinks = [
 	{ name: "Home", href: "/" },
@@ -10,7 +10,7 @@ const navigationLinks = [
 	{ name: "Favorites", href: "/favorites" },
 ];
 
-const isAthorized = true;
+const isAthorized = false;
 
 export const Header=()=>{
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
