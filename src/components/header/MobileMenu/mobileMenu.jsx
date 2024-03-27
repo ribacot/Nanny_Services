@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import {Navigation} from "../Navigation/Navigation";
+import { Navigation } from "../navigation/navigation";
 
 export function MobileMenu({ onClick, isOpen, links }) {
 	return (
