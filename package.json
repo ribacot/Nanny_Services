@@ -1,6 +1,7 @@
 {
-  "name": "nanny-services",
+  "name": "nanny_services",
   "private": true,
+  "homepage": "https://ribacot.github.io/nanny_services/",
   "version": "1.0.0",
   "scripts": {
     "dev": "rsbuild dev --open",
